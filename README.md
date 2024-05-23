@@ -25,7 +25,7 @@ Alternatively, use `go get` to build from HEAD (might be unstable).
 go get github.com/fernandrone/linelint
 ```
 
-See the **[#GitHub Actions](#GitHub-Actions)** and the **[#Docker](#Docker)** for their respective setup instructions.
+See the **[#GitHub Actions](#GitHub-Actions)**, the **[#Docker](#Docker)** and the **[#Pre-commit](#Pre-commit-hook)** for their respective setup instructions.
 
 ## Usage
 
@@ -157,4 +157,15 @@ To add a configuration file, share it with the root volume of the container:
 
 ```console
 docker run -it -v $(pwd)/.linelint.yml:/.linelint.yml -v $(pwd):/data fernandrone/linelint
+```
+
+## Pre-commit hook
+
+Sample `.pre-commit-config.yaml`:
+
+```yaml
+- repo: https://github.com/alexstaf/linelint
+  rev: be68f39e83cfbdc0d7cb10a7e24509ea0a701345
+  hooks:
+  - id: linelint
 ```
