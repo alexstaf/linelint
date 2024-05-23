@@ -1,0 +1,6 @@
+- id: linelint
+  name: linelint
+  description: Test text files with linelint
+  entry: linelint
+  language: golang
+  types: [text]
